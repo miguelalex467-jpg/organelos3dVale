@@ -66,13 +66,70 @@
 
   <a href="index.html">⬅ Volver al inicio</a>
 
-  <script>
-    const params = new URLSearchParams(window.location.search);
+  
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const model = params.get("model");
 
-    document.getElementById("viewer").src = params.get("model");
-    document.getElementById("name").textContent = params.get("name") || "";
-    document.getElementById("desc").textContent = params.get("desc") || "";
-  </script>
+  const info = {
+    "modelos/nucleo.glb": {
+      name: "Núcleo",
+      desc: "Controla las actividades celulares y contiene el ADN."
+    },
+    "modelos/mitocondria.glb": {
+      name: "Mitocondria",
+      desc: "Produce la energía necesaria para la célula."
+    },
+    "modelos/ribosoma.glb": {
+      name: "Ribosoma",
+      desc: "Sintetiza proteínas."
+    },
+    "modelos/golgi.glb": {
+      name: "Aparato de Golgi",
+      desc: "Modifica y transporta proteínas."
+    },
+    "modelos/re_liso.glb": {
+      name: "Retículo Endoplásmico Liso",
+      desc: "Sintetiza lípidos y detoxifica."
+    },
+    "modelos/re_rugoso.glb": {
+      name: "Retículo Endoplásmico Rugoso",
+      desc: "Produce proteínas con ayuda de los ribosomas."
+    },
+    "modelos/lisosoma.glb": {
+      name: "Lisosoma",
+      desc: "Realiza la digestión celular."
+    },
+    "modelos/vacuola.glb": {
+      name: "Vacuola",
+      desc: "Almacena sustancias."
+    },
+    "modelos/cloroplasto.glb": {
+      name: "Cloroplasto",
+      desc: "Realiza la fotosíntesis."
+    },
+    "modelos/centriolo.glb": {
+      name: "Centriolo",
+      desc: "Participa en la división celular."
+    },
+    "modelos/membrana.glb": {
+      name: "Membrana Celular",
+      desc: "Protege y regula el paso de sustancias."
+    },
+    "modelos/citoplasma.glb": {
+      name: "Citoplasma",
+      desc: "Medio donde se encuentran los organelos."
+    }
+  };
+
+  if (model) {
+    document.getElementById("viewer").src = model;
+    if (info[model]) {
+      document.getElementById("name").textContent = info[model].name;
+      document.getElementById("desc").textContent = info[model].desc;
+    }
+  }
+</script>
 
 </body>
 </html>
