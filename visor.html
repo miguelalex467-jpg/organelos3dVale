@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <title>Visor 3D</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- Model Viewer -->
   <script type="module"
     src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js">
   </script>
@@ -12,33 +12,66 @@
   <style>
     body {
       margin: 0;
-      background: #f2f2f2;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #111;
+      color: white;
     }
+
+    header {
+      padding: 15px;
+      background: #1f2933;
+      text-align: center;
+    }
+
+    h2 {
+      margin: 5px 0;
+    }
+
+    p {
+      margin: 5px 20px 15px;
+      text-align: center;
+      font-size: 1em;
+    }
+
     model-viewer {
       width: 100vw;
-      height: 100vh;
+      height: calc(100vh - 160px);
+      background: #222;
+    }
+
+    a {
+      display: block;
+      text-align: center;
+      padding: 10px;
+      color: #4fd1c5;
+      text-decoration: none;
+      font-weight: bold;
     }
   </style>
 </head>
 <body>
 
+  <header>
+    <h2 id="name">Organelo</h2>
+    <p id="desc">Descripción</p>
+  </header>
+
   <model-viewer
     id="viewer"
     camera-controls
     auto-rotate
-    ar
+    exposure="1"
     shadow-intensity="1">
   </model-viewer>
 
+  <a href="index.html">⬅ Volver al inicio</a>
+
   <script>
     const params = new URLSearchParams(window.location.search);
-    const model = params.get("model");
 
-    if (model) {
-      document.getElementById("viewer").src = model;
-    } else {
-      alert("No se encontró el modelo");
-    }
+    document.getElementById("viewer").src = params.get("model");
+    document.getElementById("name").textContent = params.get("name") || "";
+    document.getElementById("desc").textContent = params.get("desc") || "";
   </script>
 
 </body>
