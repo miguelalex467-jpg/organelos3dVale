@@ -3,23 +3,86 @@
 <head>
   <meta charset="UTF-8">
   <title>Organelos Celulares 3D</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      color: white;
+      text-align: center;
+    }
+
+    h1 {
+      margin-top: 30px;
+      font-size: 2em;
+    }
+
+    p {
+      max-width: 600px;
+      margin: 10px auto 30px;
+      font-size: 1.1em;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 15px;
+      padding: 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .btn {
+      background: white;
+      color: #203a43;
+      padding: 15px;
+      border-radius: 12px;
+      font-weight: bold;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+    }
+
+    footer {
+      margin: 20px;
+      font-size: 0.9em;
+      opacity: 0.8;
+    }
+  </style>
 </head>
 <body>
-  <h1>Organelos Celulares</h1>
 
-  <ul>
-    <li><a href="visor.html?m=nucleo">Núcleo</a></li>
-    <li><a href="visor.html?m=mitocondria">Mitocondria</a></li>
-    <li><a href="visor.html?m=membranaplastica">Membrana Platica</a></li>
-    <li><a href="visor.html?m=golgi">Aparato de Golgi</a></li>
-    <li><a href="visor.html?m=re_liso_y_rugoso">Retículo Endoplásmico Liso Y Rugoso</a></li>
-    <li><a href="visor.html?m=lisosoma">Lisosoma</a></li>
-    <li><a href="visor.html?m=vacuola">Vacuola</a></li>
-    <li><a href="visor.html?m=cloroplasto">Cloroplasto</a></li>
-    <li><a href="visor.html?m=centriolo">Centriolo</a></li>
-    <li><a href="visor.html?m=membranacelular">Membrana Celular</a></li>
-    <li><a href="visor.html?m=citoplasma">Citoplasma</a></li>
-    <li><a href="visor.html?m=celula">Celula completa</a></li>
-  </ul>
+  <h1>🧬 Organelos Celulares en 3D</h1>
+  <p>Selecciona un organelo para visualizar su modelo tridimensional interactivo.</p>
+
+  <div class="grid">
+    <a href="visor.html?model=modelos/nucleo.glb&name=Núcleo&desc=Controla las actividades celulares y contiene el ADN."><div class="btn">Núcleo</div></a>
+    <a href="visor.html?model=modelos/mitocondria.glb&name=Mitocondria&desc=Produce la energía necesaria para la célula."><div class="btn">Mitocondria</div></a>
+    <a href="visor.html?model=modelos/ribosoma.glb&name=Ribosoma&desc=Sintetiza proteínas."><div class="btn">Ribosoma</div></a>
+    <a href="visor.html?model=modelos/golgi.glb&name=Aparato de Golgi&desc=Modifica y transporta proteínas."><div class="btn">Aparato de Golgi</div></a>
+    <a href="visor.html?model=modelos/re_liso.glb&name=Retículo Endoplásmico Liso&desc=Sintetiza lípidos y detoxifica."><div class="btn">R. E. Liso</div></a>
+    <a href="visor.html?model=modelos/re_rugoso.glb&name=Retículo Endoplásmico Rugoso&desc=Produce proteínas."><div class="btn">R. E. Rugoso</div></a>
+    <a href="visor.html?model=modelos/lisosoma.glb&name=Lisosoma&desc=Digestión celular."><div class="btn">Lisosoma</div></a>
+    <a href="visor.html?model=modelos/vacuola.glb&name=Vacuola&desc=Almacena sustancias."><div class="btn">Vacuola</div></a>
+    <a href="visor.html?model=modelos/cloroplasto.glb&name=Cloroplasto&desc=Realiza la fotosíntesis."><div class="btn">Cloroplasto</div></a>
+    <a href="visor.html?model=modelos/centriolo.glb&name=Centriolo&desc=Participa en la división celular."><div class="btn">Centriolo</div></a>
+    <a href="visor.html?model=modelos/membrana.glb&name=Membrana Celular&desc=Protege y regula el paso de sustancias."><div class="btn">Membrana Celular</div></a>
+    <a href="visor.html?model=modelos/citoplasma.glb&name=Citoplasma&desc=Medio donde se encuentran los organelos."><div class="btn">Citoplasma</div></a>
+  </div>
+
+  <footer>
+    Proyecto educativo – Visualización 3D
+  </footer>
+
 </body>
 </html>
